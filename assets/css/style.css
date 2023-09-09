@@ -8,8 +8,12 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-
-
+.font{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.color{
+  background-color:dodgerblue;
+}
 .curve{
  border-radius: 20px;
 }
