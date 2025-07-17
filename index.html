@@ -100,13 +100,11 @@
       <div class="container text-justify" data-aos="fade-up">
         <div class="section-title font ">
           <h2>About</h2>
-          Hi! I am Arnav Khajuria, a software developer with 1+ years of experience in frontend, backend, and DevOps. I hold a B.E. in Electronics & Communication Engineering from Government College of Engineering and Technology, J&K, India.
+          Hi! I’m Arnav Khajuria, a software developer with 2+ years of experience in frontend, backend, DevOps, and AI. I hold a B.E. in Electronics & Communication Engineering from Government College of Engineering and Technology, J&K, India. My journey into tech began with a childhood fascination for computers and software, which gradually evolved into a passion for building real-world solutions through code.
 
-          My journey into tech began with a childhood fascination for computers and software. Over the years, I’ve explored a wide range of programming languages, frameworks, and technologies through self-learning and real-world projects. Today, I work as a full-stack developer with solid experience in building scalable web applications and managing cloud infrastructure and CI/CD pipelines.
+          Over time, I’ve explored various areas of software development—from building web applications and managing cloud infrastructure to implementing intelligent systems powered by AI. I’m especially interested in creating secure, scalable, and innovative solutions that push the boundaries of modern technology. I also have a growing curiosity for blockchain development and enjoy learning how emerging technologies can be applied to solve complex problems.
           
-          I also have a growing interest in blockchain development and enjoy creating secure, innovative solutions that leverage modern technology. Additionally, I am deeply interested in the field of Artificial Intelligence and am actively pursuing it to expand my skills and apply AI in real-world applications.
-          
-          Outside of tech, I’m a gamer and a musician.
+          Outside the world of tech, I’m a gamer and a musician who enjoys creativity in all its forms.
     </section>
 
     <section id="resume" class="resume">
@@ -841,10 +839,14 @@
       const carrot = new Carrot();
       carrot.mesh.position.set(80, 10, 10);
       internals.scene.add(carrot.mesh);
-      internals.scene.add(new Cloud({ y: -5, z: 20 }).mesh);
-      internals.scene.add(new Cloud({ y: 0, z: 10, delay: 1 }).mesh);
-      internals.scene.add(new Cloud({ y: 15, z: -10, delay: .5 }).mesh);
-      internals.scene.add(new Cloud({ y: -15, z: 10, delay: 2 }).mesh);
+      
+      // Only add clouds on desktop (screen width > 768px)
+      if (window.innerWidth > 768) {
+        internals.scene.add(new Cloud({ y: -5, z: 20 }).mesh);
+        internals.scene.add(new Cloud({ y: 0, z: 10, delay: 1 }).mesh);
+        internals.scene.add(new Cloud({ y: 15, z: -10, delay: .5 }).mesh);
+        internals.scene.add(new Cloud({ y: -15, z: 10, delay: 2 }).mesh);
+      }
 
       // Render loop
       internals.render = () => internals.renderer.render(internals.scene, internals.camera);
