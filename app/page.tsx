@@ -276,7 +276,7 @@ export default function Home() {
               <div className="col-lg-4 col-md-6 mb-4">
                 <div className="portfolio-item bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-100 d-flex flex-column">
                   <div className="portfolio-img-wrapper overflow-hidden">
-                    <img src="/images/seekr.png" alt="Seekr" className="w-full h-56 object-cover transition-transform duration-300 hover:scale-110" />
+                    <img src="/images/Seekr.png" alt="Seekr" className="w-full h-56 object-cover transition-transform duration-300 hover:scale-110" />
                   </div>
                   <div className="p-4 flex-grow-1 d-flex flex-column">
                     <h3 className="text-xl font-semibold mb-2 text-gray-800">Seekr</h3>
