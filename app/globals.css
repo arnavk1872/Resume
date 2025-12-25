@@ -1,0 +1,29 @@
+#hero {
+  position: relative;
+  overflow: hidden;
+  background: white;
+}
+
+#flying-carrot-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#hero .container {
+  position: relative;
+  z-index: 2;
+  max-width: 50%;
+  margin-left: 0;
+}
+
+@media (max-width: 768px) {
+  #hero .container {
+    max-width: 100%;
+  }
+}
+
