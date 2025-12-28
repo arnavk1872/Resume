@@ -1,10 +1,16 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
+import { SmoothCursor } from '@/components/ui/smooth-cursor'
 
 export const metadata: Metadata = {
   title: 'My Portfolio',
   description: '',
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
 }
 
 export default function RootLayout({
@@ -15,6 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/logo.png" type="image/png" />
+        <link rel="shortcut icon" href="/logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.6.0/dist/css/bootstrap.min.css" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
         <link
@@ -29,7 +38,8 @@ export default function RootLayout({
         <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
         <link href="/assets/css/style.css" rel="stylesheet" />
       </head>
-      <body>
+      <body className="cursor-none">
+        <SmoothCursor />
         {children}
         <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.6.0/dist/js/bootstrap.bundle.min.js" strategy="afterInteractive" />
         <Script src="/assets/vendor/purecounter/purecounter.js" strategy="afterInteractive" />

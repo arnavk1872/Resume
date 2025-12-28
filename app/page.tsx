@@ -3,9 +3,113 @@
 import Image from 'next/image'
 import Scripts from './scripts'
 import { useState } from 'react'
+import { Highlighter } from '@/components/ui/highlighter'
+import { ShinyButton } from '@/components/ui/shiny-button'
 
 export default function Home() {
   const [showAllProjects, setShowAllProjects] = useState(false)
+
+  const projects = [
+    {
+      id: 1,
+      title: "Persona Fine Tuning",
+      description: "Advanced fine-tuning solution for creating personalized AI personas with custom behavior and knowledge.",
+      image: "/images/fine-tune.png",
+      imageAlt: "Persona Fine Tuning",
+      url: "https://github.com/arnavk1872/dpo_lora"
+    },
+    {
+      id: 2,
+      title: "Hash Trail",
+      description: "A comprehensive blockchain explorer for analyzing on-chain data, transactions, and smart contract interactions.",
+      image: "/images/onchain.png",
+      imageAlt: "Hash Trail",
+      url: "https://github.com/arnavk1872/onchain-explorer"
+    },
+    {
+      id: 3,
+      title: "Chroma Explorer",
+      description: "An advanced tool for exploring and visualizing data stored in ChromaDB vector databases with intuitive search and filtering capabilities.",
+      image: "/images/chroma.png",
+      imageAlt: "Chroma Explorer",
+      url: "https://chroma-explorer.vercel.app/"
+    },
+    {
+      id: 4,
+      title: "Seekr",
+      description: "A web app that lets users ask questions about YouTube videos in real time, ideal for education, research, and interactive learning.",
+      image: "/images/Seekr.png",
+      imageAlt: "Seekr",
+      url: "https://github.com/arnavk1872/seekr"
+    },
+    {
+      id: 5,
+      title: "Grabbzo",
+      description: "A mobile-first app and Website for dine-in, pre-ordering food and takeaway from nearby restaurants.",
+      image: "/images/grabzo.png",
+      imageAlt: "Grabbzo",
+      url: "https://grabbzo.com"
+    },
+    {
+      id: 6,
+      title: "Legal Lancer",
+      description: "A platform where clients can post freelance projects and skilled professionals can apply on said work.",
+      image: "/images/LegalLancer.png",
+      imageAlt: "Legal Lancer",
+      url: "https://legalLancerIndia.com"
+    },
+    {
+      id: 7,
+      title: "altCtrlHistory",
+      description: "An app where you change a moment in history and see how events might unfold in an alternate timeline.",
+      image: "/images/altctrlHistory.png",
+      imageAlt: "altCtrlHistory",
+      url: "https://altcrtl-history.vercel.app/"
+    },
+    {
+      id: 8,
+      title: "Krypt Dapp",
+      description: "Decentralized open sourced Cryptocurrency Sending and Transaction Recording Application",
+      image: "/images/121.png",
+      imageAlt: "Krypt Dapp",
+      url: "https://github.com/arnavk1872/Krypt"
+    },
+    {
+      id: 9,
+      title: "Memories",
+      description: "A social media app built using MERN stack, offering seamless experiences across every device.",
+      image: "/images/as.png",
+      imageAlt: "Memories",
+      url: "https://github.com/arnavk1872/Memories_App"
+    },
+    {
+      id: 10,
+      title: "Eth-Marketplace",
+      description: "Buy courses using Ethereum by linking your Metamask wallet",
+      image: "/images/ec2.png",
+      imageAlt: "Eth-Marketplace",
+      url: "https://github.com/arnavk1872/Ethereum-Marketplace"
+    },
+    {
+      id: 11,
+      title: "Pynest",
+      description: "Python code editor with inbuilt examples for assistance.",
+      image: "/images/pynest.png",
+      imageAlt: "Pynest",
+      url: "https://python-code-editor-tawny.vercel.app/"
+    },
+    {
+      id: 12,
+      title: "Slack Bot",
+      description: "A bot that can be used to ask for approval requests from any workspace participant.",
+      image: "/images/slack.png",
+      imageAlt: "Slack Bot",
+      url: "https://github.com/arnavk1872/slack-bot"
+    }
+  ]
+
+  const featuredProjects = projects.slice(0, 6)
+  const additionalProjects = projects.slice(6)
 
   return (
     <>
@@ -48,14 +152,13 @@ export default function Home() {
           <div className="container text-justify" data-aos="fade-up">
             <div className="section-title font ">
               <h2>About</h2>
-              Hi, I&apos;m Arnav Khajuria, a full-stack software developer with 2+ years of experience building web platforms,
-              cloud infrastructure, and AI-powered systems. I graduated with a B.E. in Electronics & Communication
+              Hi, I&apos;m Arnav Khajuria, a <Highlighter action="highlight" color="#FFD700">full-stack software developer</Highlighter> with 2+ years of experience building web platforms,
+              cloud infrastructure, and <Highlighter action="highlight" color="#FF9F66">AI-powered systems</Highlighter>. I graduated with a B.E. in Electronics & Communication
               Engineering from Government College of Engineering and Technology, J&K, India.
 
-              I specialize in designing and implementing intelligent systems, with hands-on experience in applied AI,
-              LLM-based workflows, and end-to-end product development. My work spans frontend and backend engineering,
-              DevOps, and integrating AI capabilities into production-ready applications. I&apos;m particularly interested in
-              agentic AI, scalable system design, and building secure solutions that deliver real-world value.
+              I specialize in designing and implementing <Highlighter action="underline" color="#DDA0DD">intelligent systems</Highlighter>, with hands-on experience in <Highlighter action="highlight" color="#FF6B9D">applied AI</Highlighter>,
+              <Highlighter action="highlight" color="#C77DFF">LLM-based workflows</Highlighter>, and end-to-end product development. My work spans frontend and backend engineering,
+              DevOps, and integrating AI capabilities into production-ready applications. I&apos;m particularly interested in <Highlighter action="highlight" color="#4ECDC4"> agentic AI </Highlighter>, scalable system design and building secure solutions that deliver real-world value.
 
               Alongside AI, I actively explore blockchain technologies and decentralized systems. Outside of engineering,
               I&apos;m a gamer and musician.
@@ -228,191 +331,49 @@ export default function Home() {
               <p>Below is a curated list of projects I&apos;ve built or am currently working on. Each project showcases different technologies and problem-solving approaches. You can click on any project to explore its details and view the source code on my GitHub profile.</p>
             </div>
             <div className="row mt-4">
-              <div className="col-lg-4 col-md-6 mb-4">
+              {featuredProjects.map((project) => (
+                <div key={project.id} className="col-lg-4 col-md-6 mb-4">
                 <div className="portfolio-item bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-100 d-flex flex-column">
                   <div className="portfolio-img-wrapper overflow-hidden">
-                    <img src="/images/fine-tune.png" alt="Persona Fine Tuning" className="w-full h-56 object-cover transition-transform duration-300 hover:scale-110" />
+                      <img src={project.image} alt={project.imageAlt} className="w-full h-56 object-cover transition-transform duration-300 hover:scale-110" />
+                      </div>
+                      <div className="p-4 flex-grow-1 d-flex flex-column">
+                      <h3 className="text-xl font-semibold mb-2 text-gray-800">{project.title}</h3>
+                      <p className="text-gray-600 mb-4 flex-grow-1">{project.description}</p>
+                      <div className="mt-auto">
+                        <ShinyButton 
+                          onClick={() => window.open(project.url, '_blank', 'noopener,noreferrer')}
+                          className="w-full text-center bg-blue-500 text-white border-blue-500 border-2 px-4 py-2.5 font-semibold text-sm hover:bg-blue-700 hover:border-blue-700 transition-all duration-200"
+                        >
+                          View Project <i className="bi bi-arrow-right ms-2"></i>
+                        </ShinyButton>
+                      </div>
+                    </div>
                   </div>
-                  <div className="p-4 flex-grow-1 d-flex flex-column">
-                    <h3 className="text-xl font-semibold mb-2 text-gray-800">Persona Fine Tuning</h3>
-                    <p className="text-gray-600 mb-3 flex-grow-1">Advanced fine-tuning solution for creating personalized AI personas with custom behavior and knowledge.</p>
-                    <a href="https://github.com/arnavk1872/dpo_lora" target="_blank" rel="noopener noreferrer"
-                      className="btn btn-primary w-100 text-center transition-all duration-300 hover:bg-blue-600">
-                      View Project <i className="bi bi-arrow-right ms-2"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 mb-4">
-                <div className="portfolio-item bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-100 d-flex flex-column">
-                  <div className="portfolio-img-wrapper overflow-hidden">
-                    <img src="/images/onchain.png" alt="Hash Trail" className="w-full h-56 object-cover transition-transform duration-300 hover:scale-110" />
-                  </div>
-                  <div className="p-4 flex-grow-1 d-flex flex-column">
-                    <h3 className="text-xl font-semibold mb-2 text-gray-800">Hash Trail</h3>
-                    <p className="text-gray-600 mb-3 flex-grow-1">A comprehensive blockchain explorer for analyzing on-chain data, transactions, and smart contract interactions.</p>
-                    <a href="https://github.com/arnavk1872/onchain-explorer" target="_blank" rel="noopener noreferrer"
-                      className="btn btn-primary w-100 text-center transition-all duration-300 hover:bg-blue-600">
-                      View Project <i className="bi bi-arrow-right ms-2"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 mb-4">
-                <div className="portfolio-item bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-100 d-flex flex-column">
-                  <div className="portfolio-img-wrapper overflow-hidden">
-                    <img src="/images/chroma.png" alt="Chroma Explorer" className="w-full h-56 object-cover transition-transform duration-300 hover:scale-110" />
-                  </div>
-                  <div className="p-4 flex-grow-1 d-flex flex-column">
-                    <h3 className="text-xl font-semibold mb-2 text-gray-800">Chroma Explorer</h3>
-                    <p className="text-gray-600 mb-3 flex-grow-1">An advanced tool for exploring and visualizing data stored in ChromaDB vector databases with intuitive search and filtering capabilities.</p>
-                    <a href="https://chroma-explorer.vercel.app/" target="_blank" rel="noopener noreferrer"
-                      className="btn btn-primary w-100 text-center transition-all duration-300 hover:bg-blue-600">
-                      View Project <i className="bi bi-arrow-right ms-2"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 mb-4">
-                <div className="portfolio-item bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-100 d-flex flex-column">
-                  <div className="portfolio-img-wrapper overflow-hidden">
-                    <img src="/images/Seekr.png" alt="Seekr" className="w-full h-56 object-cover transition-transform duration-300 hover:scale-110" />
-                  </div>
-                  <div className="p-4 flex-grow-1 d-flex flex-column">
-                    <h3 className="text-xl font-semibold mb-2 text-gray-800">Seekr</h3>
-                    <p className="text-gray-600 mb-3 flex-grow-1">A web app that lets users ask questions about YouTube videos in real time, ideal for education, research, and interactive learning.</p>
-                    <a href="https://github.com/arnavk1872/seekr" target="_blank" rel="noopener noreferrer"
-                      className="btn btn-primary w-100 text-center transition-all duration-300 hover:bg-blue-600">
-                      View Project <i className="bi bi-arrow-right ms-2"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 mb-4">
-                <div className="portfolio-item bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-100 d-flex flex-column">
-                  <div className="portfolio-img-wrapper overflow-hidden">
-                    <img src="/images/grabzo.png" alt="Grabbzo" className="w-full h-56 object-cover transition-transform duration-300 hover:scale-110" />
-                  </div>
-                  <div className="p-4 flex-grow-1 d-flex flex-column">
-                    <h3 className="text-xl font-semibold mb-2 text-gray-800">Grabbzo</h3>
-                    <p className="text-gray-600 mb-3 flex-grow-1">A mobile-first app and Website for dine-in, pre-ordering food and takeaway from nearby restaurants.</p>
-                    <a href="https://grabbzo.com" target="_blank" rel="noopener noreferrer"
-                      className="btn btn-primary w-100 text-center transition-all duration-300 hover:bg-blue-600">
-                      View Project <i className="bi bi-arrow-right ms-2"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 mb-4">
-                <div className="portfolio-item bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-100 d-flex flex-column">
-                  <div className="portfolio-img-wrapper overflow-hidden">
-                    <img src="/images/LegalLancer.png" alt="Legal Lancer" className="w-full h-56 object-cover transition-transform duration-300 hover:scale-110" />
-                  </div>
-                  <div className="p-4 flex-grow-1 d-flex flex-column">
-                    <h3 className="text-xl font-semibold mb-2 text-gray-800">Legal Lancer</h3>
-                    <p className="text-gray-600 mb-3 flex-grow-1">A platform where clients can post freelance projects and skilled professionals can apply on said work.</p>
-                    <a href="https://legalLancerIndia.com" target="_blank" rel="noopener noreferrer"
-                      className="btn btn-primary w-100 text-center transition-all duration-300 hover:bg-blue-600">
-                      View Project <i className="bi bi-arrow-right ms-2"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
+                      </div>
+              ))}
               
-              {showAllProjects && (
-                <>
-                  <div className="col-lg-4 col-md-6 mb-4">
+              {showAllProjects && additionalProjects.map((project) => (
+                <div key={project.id} className="col-lg-4 col-md-6 mb-4">
                     <div className="portfolio-item bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-100 d-flex flex-column">
                       <div className="portfolio-img-wrapper overflow-hidden">
-                        <img src="/images/altctrlHistory.png" alt="altCtrlHistory" className="w-full h-56 object-cover transition-transform duration-300 hover:scale-110" />
+                      <img src={project.image} alt={project.imageAlt} className="w-full h-56 object-cover transition-transform duration-300 hover:scale-110" />
                       </div>
                       <div className="p-4 flex-grow-1 d-flex flex-column">
-                        <h3 className="text-xl font-semibold mb-2 text-gray-800">altCtrlHistory</h3>
-                        <p className="text-gray-600 mb-3 flex-grow-1">An app where you change a moment in history and see how events might unfold in an alternate timeline.</p>
-                        <a href="https://altcrtl-history.vercel.app/" target="_blank" rel="noopener noreferrer"
-                          className="btn btn-primary w-100 text-center transition-all duration-300 hover:bg-blue-600">
+                      <h3 className="text-xl font-semibold mb-2 text-gray-800">{project.title}</h3>
+                      <p className="text-gray-600 mb-4 flex-grow-1">{project.description}</p>
+                      <div className="mt-auto">
+                        <ShinyButton 
+                          onClick={() => window.open(project.url, '_blank', 'noopener,noreferrer')}
+                          className="w-full text-center bg-blue-600 text-white border-blue-600 border-2 px-4 py-2.5 font-semibold text-sm hover:bg-blue-700 hover:border-blue-700 transition-all duration-200"
+                        >
                           View Project <i className="bi bi-arrow-right ms-2"></i>
-                        </a>
+                        </ShinyButton>
                       </div>
                     </div>
                   </div>
-                  <div className="col-lg-4 col-md-6 mb-4">
-                    <div className="portfolio-item bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-100 d-flex flex-column">
-                      <div className="portfolio-img-wrapper overflow-hidden">
-                        <img src="/images/121.png" alt="Krypt Dapp" className="w-full h-56 object-cover transition-transform duration-300 hover:scale-110" />
                       </div>
-                      <div className="p-4 flex-grow-1 d-flex flex-column">
-                        <h3 className="text-xl font-semibold mb-2 text-gray-800">Krypt Dapp</h3>
-                        <p className="text-gray-600 mb-3 flex-grow-1">Decentralized open sourced Cryptocurrency Sending and Transaction Recording Application</p>
-                        <a href="https://github.com/arnavk1872/Krypt" target="_blank" rel="noopener noreferrer"
-                          className="btn btn-primary w-100 text-center transition-all duration-300 hover:bg-blue-600">
-                          View Project <i className="bi bi-arrow-right ms-2"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-4 col-md-6 mb-4">
-                    <div className="portfolio-item bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-100 d-flex flex-column">
-                      <div className="portfolio-img-wrapper overflow-hidden">
-                        <img src="/images/as.png" alt="Memories" className="w-full h-56 object-cover transition-transform duration-300 hover:scale-110" />
-                      </div>
-                      <div className="p-4 flex-grow-1 d-flex flex-column">
-                        <h3 className="text-xl font-semibold mb-2 text-gray-800">Memories</h3>
-                        <p className="text-gray-600 mb-3 flex-grow-1">A social media app built using MERN stack, offering seamless experiences across every device.</p>
-                        <a href="https://github.com/arnavk1872/Memories_App" target="_blank" rel="noopener noreferrer"
-                          className="btn btn-primary w-100 text-center transition-all duration-300 hover:bg-blue-600">
-                          View Project <i className="bi bi-arrow-right ms-2"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-4 col-md-6 mb-4">
-                    <div className="portfolio-item bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-100 d-flex flex-column">
-                      <div className="portfolio-img-wrapper overflow-hidden">
-                        <img src="/images/ec2.png" alt="Eth-Marketplace" className="w-full h-56 object-cover transition-transform duration-300 hover:scale-110" />
-                      </div>
-                      <div className="p-4 flex-grow-1 d-flex flex-column">
-                        <h3 className="text-xl font-semibold mb-2 text-gray-800">Eth-Marketplace</h3>
-                        <p className="text-gray-600 mb-3 flex-grow-1">Buy courses using Ethereum by linking your Metamask wallet</p>
-                        <a href="https://github.com/arnavk1872/Ethereum-Marketplace" target="_blank" rel="noopener noreferrer"
-                          className="btn btn-primary w-100 text-center transition-all duration-300 hover:bg-blue-600">
-                          View Project <i className="bi bi-arrow-right ms-2"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-4 col-md-6 mb-4">
-                    <div className="portfolio-item bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-100 d-flex flex-column">
-                      <div className="portfolio-img-wrapper overflow-hidden">
-                        <img src="/images/pynest.png" alt="Pynest" className="w-full h-56 object-cover transition-transform duration-300 hover:scale-110" />
-                      </div>
-                      <div className="p-4 flex-grow-1 d-flex flex-column">
-                        <h3 className="text-xl font-semibold mb-2 text-gray-800">Pynest</h3>
-                        <p className="text-gray-600 mb-3 flex-grow-1">Python code editor with inbuilt examples for assistance.</p>
-                        <a href="https://python-code-editor-tawny.vercel.app/" target="_blank" rel="noopener noreferrer"
-                          className="btn btn-primary w-100 text-center transition-all duration-300 hover:bg-blue-600">
-                          View Project <i className="bi bi-arrow-right ms-2"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-4 col-md-6 mb-4">
-                    <div className="portfolio-item bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-100 d-flex flex-column">
-                      <div className="portfolio-img-wrapper overflow-hidden">
-                        <img src="/images/slack.png" alt="Slack Bot" className="w-full h-56 object-cover transition-transform duration-300 hover:scale-110" />
-                      </div>
-                      <div className="p-4 flex-grow-1 d-flex flex-column">
-                        <h3 className="text-xl font-semibold mb-2 text-gray-800">Slack Bot</h3>
-                        <p className="text-gray-600 mb-3 flex-grow-1">A bot that can be used to ask for approval requests from any workspace participant.</p>
-                        <a href="https://github.com/arnavk1872/slack-bot" target="_blank" rel="noopener noreferrer"
-                          className="btn btn-primary w-100 text-center transition-all duration-300 hover:bg-blue-600">
-                          View Project <i className="bi bi-arrow-right ms-2"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </>
-              )}
+              ))}
             </div>
             <div className="text-center mt-4">
               <button
