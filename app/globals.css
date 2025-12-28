@@ -218,3 +218,15 @@ html textarea,
 html select {
   cursor: text !important;
 }
+
+@media (max-width: 768px) {
+  html,
+  html * {
+    cursor: auto !important;
+  }
+  
+  .cursor-none,
+  .cursor-none * {
+    cursor: auto !important;
+  }
+}
