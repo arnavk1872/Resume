@@ -277,7 +277,7 @@ export default function Home() {
                 <h3 className="resume-title font-mono">Professional Experience</h3>
                 <div className="resume-item ">
                   <h4>Software developer</h4>
-                  <h5 className="font-sans">May 25 - Present</h5>
+                  <h5 className="font-sans">Feb 25 - Present</h5>
                   <p className="font-semibold">Polkassembly - Remote</p>
                   <ul>
                     <li>‣ Built LLM-powered agent workflows using LangChain to automate parsing, summarization, and analysis of governance proposals within the Polkadot ecosystem. </li>
@@ -287,7 +287,7 @@ export default function Home() {
                 </div>
                 <div className="resume-item ">
                   <h4>Software developer</h4>
-                  <h5 className="font-sans">Jan 24 - April 25</h5>
+                  <h5 className="font-sans">Jan 24 - Feb 25</h5>
                   <p className="font-semibold">Avisoft - Jammu, J&K</p>
                   <ul>
                     <li>‣ Collaborating with cross-functional teams to gather requirements and deliver high-quality solutions. </li>
@@ -308,11 +308,7 @@ export default function Home() {
                   <h4>Web Development Intern</h4>
                   <h5>June 22 - Aug 22</h5>
                   <p className="font-semibold">Study MONK - Remote</p>
-                  <ul>
-                    <li>‣ Designed and developed web applications using React, delivering efficient and user-friendly interfaces.</li>
-                    <li>‣ Implemented responsive design principles, ensuring web applications perform well on various devices and screen sizes.</li>
-                    <li>‣ Optimized code and implemented best practices, improving application security and maintainability..</li>
-                  </ul>
+                 
                 </div>
                 <div className="resume-item">
                   <h4>Web Development Intern</h4>
