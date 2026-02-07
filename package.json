@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "init-db": "tsx scripts/init-db.ts"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
@@ -23,6 +24,8 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "dotenv": "^16.4.5",
+    "tsx": "^4.19.0",
     "@tailwindcss/postcss": "^4.1.18",
     "@types/node": "^20",
     "@types/pg": "^8.16.0",

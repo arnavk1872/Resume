@@ -34,6 +34,16 @@ export async function initDatabase() {
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       )
     `)
+    await query(`
+      CREATE TABLE IF NOT EXISTS visits (
+        id SERIAL PRIMARY KEY,
+        ip VARCHAR(45),
+        user_agent TEXT,
+        referer TEXT,
+        path VARCHAR(500),
+        visited_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      )
+    `)
     console.log('Database table initialized')
   } catch (error) {
     console.error('Database initialization error', error)

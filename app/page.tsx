@@ -48,7 +48,7 @@ export default function Home() {
       description: "A mobile-first app and Website for dine-in, pre-ordering food and takeaway from nearby restaurants.",
       image: "/images/grabzo.png",
       imageAlt: "Grabbzo",
-      url: "https://grabbzo.com"
+      url: "https://www.google.com/search?q=grabbzo&oq=grabbzo&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGDwyBggCECMYJzIGCAMQABgeMgYIBBBFGDwyBggFEEUYPDIGCAYQRRg8MgYIBxBFGEHSAQgyNDg0ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8"
     },
     {
       id: 6,
