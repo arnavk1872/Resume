@@ -276,23 +276,32 @@ export default function Home() {
               <div className="col-lg-6">
                 <h3 className="resume-title font-mono">Professional Experience</h3>
                 <div className="resume-item ">
-                  <h4>Software developer</h4>
-                  <h5 className="font-sans">Feb 25 - Present</h5>
-                  <p className="font-semibold">Polkassembly - Remote</p>
+                  <h4>Senior AI Engineer</h4>
+                  <h5 className="font-sans">Apr 2026 - Present</h5>
+                  <p className="font-semibold">IKS Health · Full-time - Remote</p>
+                </div>
+                <div className="resume-item ">
+                  <h4>Founding Engineer</h4>
+                  <h5 className="font-sans">Nov 2025 - Mar 2026</h5>
+                  <p className="font-semibold">ThinkDTM · Full-time - Remote</p>
                   <ul>
-                    <li>‣ Built LLM-powered agent workflows using LangChain to automate parsing, summarization, and analysis of governance proposals within the Polkadot ecosystem. </li>
-                    <li>‣ Designed and deployed Retrieval-Augmented Generation (RAG) pipelines using Mem0 and ChromaDB to enable context-aware, on-chain governance intelligence. </li>
-                    <li>‣ Fine-tuned transformer-based models using Hugging Face and LoRA for sentiment analysis and user intent classification..</li>
+                    <li>‣ Built and optimized AI-based solutions for healthcare insights and patient onboarding, contributing to product growth prior to acquisition by IKS Health.</li>
                   </ul>
                 </div>
                 <div className="resume-item ">
                   <h4>Software developer</h4>
-                  <h5 className="font-sans">Jan 24 - Feb 25</h5>
-                  <p className="font-semibold">Avisoft - Jammu, J&K</p>
+                  <h5 className="font-sans">Jan 2025 - Nov 2025</h5>
+                  <p className="font-semibold">Polkassembly · Full-time - Remote</p>
                   <ul>
-                    <li>‣ Collaborating with cross-functional teams to gather requirements and deliver high-quality solutions. </li>
-                    <li>‣ Increased the Lighthouse performance score from 60 to 84 through optimization techniques, enhancing overall user experience and website efficiency. </li>
-                    <li>‣ Implementing best practices for code quality, testing, and version control.</li>
+                    <li>‣ Built LangChain-based LLM workflows for Polkadot governance, using RAG with Mem0 and ChromaDB, and fine-tuned Hugging Face models for sentiment and intent analysis.</li>
+                  </ul>
+                </div>
+                <div className="resume-item ">
+                  <h4>Software developer</h4>
+                  <h5 className="font-sans">Jan 2024 - Jan 2025</h5>
+                  <p className="font-semibold">Avisoft · Full-time - Jammu, Jammu &amp; Kashmir, India · On-site</p>
+                  <ul>
+                    <li>‣ Collaborated with cross-functional teams to deliver high-quality solutions, improved Lighthouse performance from 60 to 84 through optimization, and followed best practices for code quality, testing, and documentation.</li>
                   </ul>
                 </div>
                 <div className="resume-item ">
@@ -303,17 +312,6 @@ export default function Home() {
                     <li>‣ Implemented blockchain solutions for secure and transparent transaction processing within the marketplace.</li>
                     <li>‣ Learned about consensus mechanisms,public key crptography & how they are implemented in real world projects.</li>
                   </ul>
-                </div>
-                <div className="resume-item">
-                  <h4>Web Development Intern</h4>
-                  <h5>June 22 - Aug 22</h5>
-                  <p className="font-semibold">Study MONK - Remote</p>
-                 
-                </div>
-                <div className="resume-item">
-                  <h4>Web Development Intern</h4>
-                  <h5>June 21 - July 21</h5>
-                  <p className="font-semibold">Suvidha Foundation - Remote</p>
                 </div>
               </div>
             </div>
